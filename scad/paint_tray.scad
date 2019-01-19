@@ -1,19 +1,12 @@
 $fn=64;
 
-module roundedcube(xdim, ydim, zdim, rdim) {
-    hull() {
-        translate([rdim, rdim, 0]) cylinder(r=rdim, h=zdim);
-        translate([xdim-rdim, rdim, 0]) cylinder(r=rdim, h=zdim);
-        translate([rdim, ydim-rdim, 0]) cylinder(r=rdim, h=zdim);
-        translate([xdim-rdim, ydim-rdim, 0]) cylinder(r=rdim, h=zdim);
-    }
-}
+include <lib/roundedcube.scad>
 
 vallejoDia = 25;      // Vallejo, Army Painter, Scale 75, GSW
 vallejoLargeDia = 36; // Vallejo Metal Color, Vehicle Washes
 citadelDia = 33;      // Modern Citadel Pots
 
-sectionX = 400;
+sectionX = 200;
 sectionY = 80;
 
 roundedcube(sectionX, sectionY, 10, 5);
